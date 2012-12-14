@@ -1,0 +1,35 @@
+%h1 Listing diners
+
+%table
+  %tr
+    %th Name
+    %th Street
+    %th Number
+    %th Zipcode
+    %th City
+    %th Url
+    %th Time
+    %th Phone
+    %th Urlmaps
+    %th
+    %th
+    %th
+
+  - @diners.each do |diner|
+    %tr
+      %td= diner.name
+      %td= diner.street
+      %td= diner.number
+      %td= diner.zipcode
+      %td= diner.city
+      %td= diner.url
+      %td= diner.time
+      %td= diner.phone
+      %td= diner.urlmaps
+      %td= link_to 'Show', diner
+      %td= link_to 'Edit', edit_diner_path(diner)
+      %td= link_to 'Destroy', diner, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Diner', new_diner_path

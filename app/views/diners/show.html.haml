@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @diner.name
+%p
+  %b Street:
+  = @diner.street
+%p
+  %b Number:
+  = @diner.number
+%p
+  %b Zipcode:
+  = @diner.zipcode
+%p
+  %b City:
+  = @diner.city
+%p
+  %b Url:
+  = @diner.url
+%p
+  %b Time:
+  = @diner.time
+%p
+  %b Phone:
+  = @diner.phone
+%p
+  %b Urlmaps:
+  = @diner.urlmaps
+
+= link_to 'Edit', edit_diner_path(@diner)
+\|
+= link_to 'Back', diners_path
