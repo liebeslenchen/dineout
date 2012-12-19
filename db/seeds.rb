@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Diner.create city: 'Muenster', name: 'Joeys - Sued West', number: '25', phone: '0251-539300', street: 'Hammer Strasse', time: 'daily from 11h-23h' , url: 'http://www.joeys.de/muenster', urlmaps: 'http://maps.google.de/', zipcode: '48145'
