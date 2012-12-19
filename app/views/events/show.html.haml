@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Diner:
+  = @event.diner
+%p
+  %b Dtime:
+  = @event.dtime
+
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path

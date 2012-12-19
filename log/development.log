@@ -993,3 +993,396 @@ ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
 
 
   Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121219115013')
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/event" for 127.0.0.1 at 2012-12-19 12:55:08 +0100
+Connecting to database specified by database.yml
+
+ActionController::RoutingError (No route matches [GET] "/event"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2012-12-19 12:55:12 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  Rendered events/index.html.haml within layouts/application (5.4ms)
+Compiled events.css  (13ms)  (pid 957)
+Compiled application.css  (27ms)  (pid 957)
+Compiled events.js  (61ms)  (pid 957)
+Compiled application.js  (83ms)  (pid 957)
+Completed 200 OK in 518ms (Views: 426.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /events.css - 200 OK (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /events.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /diners.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /diners.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+Served asset /application.js - 304 Not Modified (37ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2012-12-19 12:55:13 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2012-12-19 12:55:15 +0100
+Processing by EventsController#new as HTML
+  Rendered events/_form.html.haml (453.7ms)
+  Rendered events/new.html.haml within layouts/application (464.9ms)
+Completed 500 Internal Server Error in 481ms
+
+ActionView::Template::Error (undefined method `diner' for #<Event:0x007fac01833038>):
+    8: 
+    9:   .field
+    10:     = f.label :diner
+    11:     = f.text_field :diner
+    12:   .field
+    13:     = f.label :dtime
+    14:     = f.datetime_select :dtime
+  app/views/events/_form.html.haml:11:in `block in _app_views_events__form_html_haml__3176008547186407718_70188402200560'
+  app/views/events/_form.html.haml:1:in `_app_views_events__form_html_haml__3176008547186407718_70188402200560'
+  app/views/events/new.html.haml:3:in `_app_views_events_new_html_haml___539785594585195139_70188403616080'
+  app/controllers/events_controller.rb:29:in `new'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.6ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2012-12-19 12:59:39 +0100
+Processing by EventsController#new as HTML
+  [1m[35mDiner Load (0.2ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered events/_form.html.haml (18.1ms)
+  Rendered events/new.html.haml within layouts/application (19.7ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `diner_ids' for #<Event:0x007fac01872300>):
+    8: 
+    9:   .field
+    10:     = f.label :diner
+    11:     = f.collection_select :diner_ids, Diner.all, :id, :name, { selected: @event.diner_ids }, { multiple: true }
+    12:   .field
+    13:     = f.label :dtime
+    14:     = f.datetime_select :dtime
+  app/views/events/_form.html.haml:11:in `block in _app_views_events__form_html_haml__3176008547186407718_70188368388360'
+  app/views/events/_form.html.haml:1:in `_app_views_events__form_html_haml__3176008547186407718_70188368388360'
+  app/views/events/new.html.haml:3:in `_app_views_events_new_html_haml___539785594585195139_70188403616080'
+  app/controllers/events_controller.rb:29:in `new'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2012-12-19 13:00:29 +0100
+Processing by EventsController#new as HTML
+  [1m[36mDiner Load (0.1ms)[0m  [1mSELECT "diners".* FROM "diners" [0m
+  Rendered events/_form.html.haml (13.3ms)
+  Rendered events/new.html.haml within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (undefined method `diner_ids' for #<Event:0x007fac03b98de8>):
+    8: 
+    9:   .field
+    10:     = f.label :diner
+    11:     = f.collection_select :diner_ids, Diner.all, :id, :name, { selected: @event.diner_ids }, { multiple: true }
+    12:   .field
+    13:     = f.label :dtime
+    14:     = f.datetime_select :dtime
+  app/views/events/_form.html.haml:11:in `block in _app_views_events__form_html_haml__3176008547186407718_70188368388360'
+  app/views/events/_form.html.haml:1:in `_app_views_events__form_html_haml__3176008547186407718_70188368388360'
+  app/views/events/new.html.haml:3:in `_app_views_events_new_html_haml___539785594585195139_70188403616080'
+  app/controllers/events_controller.rb:29:in `new'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.4ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2012-12-19 13:02:33 +0100
+Processing by EventsController#new as HTML
+  [1m[35mDiner Load (0.1ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered events/_form.html.haml (32.9ms)
+  Rendered events/new.html.haml within layouts/application (35.4ms)
+Completed 200 OK in 104ms (Views: 56.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-19 13:02:33 +0100
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/images/favicon.ico" for 127.0.0.1 at 2012-12-19 13:02:34 +0100
+
+ActionController::RoutingError (No route matches [GET] "/events/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
