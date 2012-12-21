@@ -2,14 +2,14 @@
 
 FactoryGirl.define do
   factory :diner do
-    name "MyString"
-    street "MyString"
-    number "MyString"
+    sequence(:name) {|n| "My Diner No #{n}" }
+    street "TestStreet"
+    number "TestNumber"
     zipcode "MyString"
     city "MyString"
     url "MyString"
     time "MyText"
     phone "MyString"
-    urlmaps "MyString"
+    urlmaps "https://maps.google.de/"
   end
 end
