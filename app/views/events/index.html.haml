@@ -10,7 +10,7 @@
 
   - @events.each do |event|
     %tr
-      %td= event.diner_id
+      %td= event.diner.name
       %td= event.dtime
       %td= link_to 'Show', event
       %td= link_to 'Edit', edit_event_path(event)

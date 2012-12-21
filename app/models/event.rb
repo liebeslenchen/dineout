@@ -1,4 +1,4 @@
 class Event < ActiveRecord::Base
   attr_accessible :dtime, :diner_id
-  has_many :diners
+  belongs_to :diner
 end
