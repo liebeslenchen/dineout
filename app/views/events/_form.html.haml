@@ -7,10 +7,10 @@
           %li= msg
 
   .field
-    = f.label :diner
+    = f.label 'Diner'
     = f.collection_select :diner_id, Diner.all, :id, :name, { selected: @event.diner_id }, { multiple: false }
   .field
-    = f.label :dtime
+    = f.label 'Uhrzeit'
     = f.time_select :dtime
   .actions
-    = f.submit 'Save'
+    = f.submit 'Speichern'
