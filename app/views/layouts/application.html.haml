@@ -33,9 +33,11 @@
               %li= link_to "Link 2", "/path2"
               %li= link_to "Link 3", "/path3"
               - if current_user
-                %li= link_to "Welcome, #{current_user.email}!", ""
+                %li= link_to "Wilkommen, #{current_user.email}!", ""
+                %li= link_to "Ausloggen", destroy_user_session_path, method: :delete
               - else
-                %li= link_to 'Sign up', new_user_registration_path
+                %li= link_to 'Einloggen', new_user_session_path
+                %li= link_to 'Registrieren', new_user_registration_path
 
     .container-fluid
 
