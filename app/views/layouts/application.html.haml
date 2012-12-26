@@ -18,6 +18,7 @@
 
 
   %body
+
     .navbar.navbar-fluid-top
       .navbar-inner
         .container-fluid
@@ -30,7 +31,11 @@
             %ul.nav
               %li= link_to "Link 1", "/path1"
               %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 4", "/path3"
+              %li= link_to "Link 3", "/path3"
+              - if current_user
+                %li= link_to "Welcome, #{current_user.email}!", ""
+              - else
+                %li= link_to 'Sign up', new_user_registration_path
 
     .container-fluid
 
