@@ -32,6 +32,8 @@
               %li= link_to "Link 1", "/path1"
               %li= link_to "Link 2", "/path2"
               %li= link_to "Link 3", "/path3"
+
+            %ul.nav.pull-right
               - if current_user
                 %li= link_to "Wilkommen, #{current_user.email}!", ""
                 %li= link_to "Ausloggen", destroy_user_session_path, method: :delete
