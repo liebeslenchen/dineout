@@ -1,4 +1,5 @@
 %h1 New diner
+%button.btn.btn-small{:type => "button"}
 = render 'form'
 
 = link_to 'Zurück', diners_path
