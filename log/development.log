@@ -35061,3 +35061,525 @@ Connecting to database specified by database.yml
   [1m[35m (13.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121226094520')
   [1m[36m (9.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121219115013')[0m
   [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121214114520')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130102205320')[0m
+  [1m[35m (54.2ms)[0m  commit transaction
+Migrating to AddDinerTypIdToDiners (20130102205810)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "diners" ADD "diner_typ_id" integer
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130102205810')[0m
+  [1m[35m (36.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (166.7ms)[0m  CREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (11.3ms)[0m  [1mCREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "diner_typ_id" integer) [0m
+  [1m[35m (214.8ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (37.3ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (24.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (33.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (17.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (12.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (22.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (53.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205810')
+  [1m[36m (12.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121226094520')[0m
+  [1m[35m (127.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121219115013')
+  [1m[36m (16.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121214114520')[0m
+  [1m[35m (17.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205320')
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (29.2ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:24:36 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:24:36 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:24:36 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:24:36 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:24:36 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:24:36 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (11.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:24:36 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:24:36 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (2.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (46.6ms)[0m  CREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (27.6ms)[0m  [1mCREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "diner_typ_id" integer) [0m
+  [1m[35m (14.9ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.2ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (19.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (15.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (14.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (12.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (21.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (6.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205810')
+  [1m[36m (16.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121226094520')[0m
+  [1m[35m (10.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121219115013')
+  [1m[36m (11.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121214114520')[0m
+  [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205320')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (32.1ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:26:09 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:26:09 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:26:09 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:26:09 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:26:09 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:26:09 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (47.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:26:09 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:26:09 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (36.7ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (53.3ms)[0m  DROP TABLE "diner_types"
+  [1m[36m (16.3ms)[0m  [1mCREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (55.2ms)[0m  DROP TABLE "diners"
+  [1m[36m (19.1ms)[0m  [1mCREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "diner_typ_id" integer) [0m
+  [1m[35m (15.4ms)[0m  DROP TABLE "events"
+  [1m[36m (13.5ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (13.3ms)[0m  CREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")
+  [1m[36m (19.0ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (22.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (15.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (21.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (1.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:26:50 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:26:50 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:26:50 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:26:50 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:26:50 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:26:50 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:26:50 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:26:50 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+Connecting to database specified by database.yml
+  [1m[36m (3.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (43.0ms)[0m  CREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (41.0ms)[0m  [1mCREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "diner_typ_id" integer) [0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (17.6ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (40.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (10.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (9.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (19.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (14.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (12.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205810')
+  [1m[36m (11.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121226094520')[0m
+  [1m[35m (15.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121219115013')
+  [1m[36m (9.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121214114520')[0m
+  [1m[35m (52.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205320')
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (28.4ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:27:55 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:27:55 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (12.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:27:55 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:27:55 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (13.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:27:55 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:27:55 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:27:55 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:27:55 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (94.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (26.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateDiners (20121214114520)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121214114520')[0m
+  [1m[35m (13.4ms)[0m  commit transaction
+Migrating to CreateEvents (20121219115013)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.8ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121219115013')
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateUsers (20121226094520)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121226094520')
+  [1m[36m (14.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateDinerTypes (20130102205320)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130102205320')
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddDinerTypIdToDiners (20130102205810)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "diners" ADD "diner_typ_id" integer[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130102205810')
+  [1m[36m (18.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (28.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (45.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateDiners (20121214114520)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121214114520')[0m
+  [1m[35m (25.5ms)[0m  commit transaction
+Migrating to CreateEvents (20121219115013)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121219115013')
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateUsers (20121226094520)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121226094520')
+  [1m[36m (21.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateDinerTypes (20130102205320)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130102205320')
+  [1m[36m (21.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddDinerTypIdToDiners (20130102205810)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "diners" ADD "diner_typ_id" integer[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130102205810')
+  [1m[36m (15.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:19 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:19 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (94.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:19 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:19 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (13.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:19 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:19 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:19 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:19 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (59.5ms)[0m  CREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (11.4ms)[0m  [1mCREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "diner_typ_id" integer) [0m
+  [1m[35m (34.6ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (32.1ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (26.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (15.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (12.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (10.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (17.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (11.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205810')
+  [1m[36m (18.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121226094520')[0m
+  [1m[35m (12.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121219115013')
+  [1m[36m (14.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121214114520')[0m
+  [1m[35m (128.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205320')
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (31.0ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (33.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (14.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Bäckerei"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Bistro"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[36m (47.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Café"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[35m (11.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Kantine"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Restaurant"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Schnellrestaurant"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[36m (11.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Imbiss"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Eisdiele"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Lounge"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00], ["name", "Kneipe"], ["updated_at", Wed, 02 Jan 2013 21:34:45 UTC +00:00]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (7.4ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (86.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (26.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (39.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Bäckerei"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Bistro"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Café"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[35m (12.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Kantine"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Restaurant"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Schnellrestaurant"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[36m (10.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Imbiss"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[35m (14.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Eisdiele"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[36m (12.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Lounge"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00], ["name", "Kneipe"], ["updated_at", Wed, 02 Jan 2013 21:34:54 UTC +00:00]]
+  [1m[36m (12.6ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (5.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (68.2ms)[0m  CREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (23.2ms)[0m  [1mCREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "diner_typ_id" integer) [0m
+  [1m[35m (52.1ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.1ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (17.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (18.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (9.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (14.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (13.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (15.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205810')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121226094520')[0m
+  [1m[35m (13.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121219115013')
+  [1m[36m (11.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121214114520')[0m
+  [1m[35m (11.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205320')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (30.0ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (9.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (45.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Bäckerei"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Bistro"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[36m (11.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Café"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Kantine"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Restaurant"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Schnellrestaurant"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Imbiss"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[35m (12.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Eisdiele"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Lounge"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[35m (10.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00], ["name", "Kneipe"], ["updated_at", Wed, 02 Jan 2013 21:35:37 UTC +00:00]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.6ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (54.7ms)[0m  CREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (88.8ms)[0m  [1mCREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "diner_typ_id" integer) [0m
+  [1m[35m (24.3ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (15.0ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (52.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (11.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (12.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (15.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (18.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (12.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205810')
+  [1m[36m (13.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121226094520')[0m
+  [1m[35m (16.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121219115013')
+  [1m[36m (12.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121214114520')[0m
+  [1m[35m (10.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205320')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (32.2ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["diner_typ_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (13.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["diner_typ_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (20.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["diner_typ_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_typ_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["diner_typ_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Bäckerei"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[35m (10.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Bistro"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Café"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[35m (10.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Kantine"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[36m (10.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Restaurant"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Schnellrestaurant"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Imbiss"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[35m (9.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Eisdiele"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[36m (15.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Lounge"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00], ["name", "Kneipe"], ["updated_at", Wed, 02 Jan 2013 21:53:55 UTC +00:00]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (52.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (44.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateDiners (20121214114520)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121214114520')[0m
+  [1m[35m (13.4ms)[0m  commit transaction
+Migrating to CreateEvents (20121219115013)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.6ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (2.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121219115013')
+  [1m[36m (10.8ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateUsers (20121226094520)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121226094520')
+  [1m[36m (16.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateDinerTypes (20130102205320)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130102205320')
+  [1m[36m (16.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddDinerTypIdToDiners (20130102205810)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "diners" ADD "diner_type_id" integer[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130102205810')
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (7.4ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["diner_type_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (55.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["diner_type_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (14.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["diner_type_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.3ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["diner_type_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (15.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Bäckerei"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[35m (10.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Bistro"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[36m (10.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Café"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[35m (10.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Kantine"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Restaurant"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[35m (10.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Schnellrestaurant"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Imbiss"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[35m (14.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Eisdiele"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Lounge"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Kneipe"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
