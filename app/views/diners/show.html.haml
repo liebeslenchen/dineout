@@ -26,7 +26,7 @@
   = @diner.phone
 %p
   %b Art:
-  = @diner.diner_type.name
+  = @diner.diner_type.try(:name)
 %p
   %b Google Maps:
   = @diner.urlmaps
