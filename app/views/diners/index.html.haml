@@ -19,4 +19,5 @@
       %td.icon-remove-sign= link_to ' Entfernen', diner, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-%button.btn.btn-small{:type => "button"}= link_to 'Neuen Diner anlegen', new_diner_path
+
+= link_to 'Neues Diner anlegen', new_diner_path, :class => "btn"
