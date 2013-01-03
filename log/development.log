@@ -35583,3 +35583,2924 @@ Connecting to database specified by database.yml
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00], ["name", "Kneipe"], ["updated_at", Wed, 02 Jan 2013 21:56:22 UTC +00:00]]
   [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "mealtypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130103205108')[0m
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.7ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["diner_type_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["diner_type_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["diner_type_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["diner_type_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Bäckerei"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Bistro"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Café"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Kantine"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Restaurant"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Schnellrestaurant"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Imbiss"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Eisdiele"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Lounge"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00], ["name", "Kneipe"], ["updated_at", Thu, 03 Jan 2013 20:51:42 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+Migrating to DinersMealtypesJoin (20130103205233)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130103205233')
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+Migrating to DinersMealtypesJoin (20130103205233)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-03 22:03:05 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  Rendered events/index.html.haml within layouts/application (5.5ms)
+Compiled application.js  (42ms)  (pid 2367)
+Completed 200 OK in 258ms (Views: 180.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /events.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /application.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /diners.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /jquery.js - 304 Not Modified (60ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /bootstrap.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /diners.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /events.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+Served asset /application.js - 304 Not Modified (41ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:03:06 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Processing by DinersController#index as HTML
+  [1m[35mDiner Load (0.2ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered diners/index.html.haml within layouts/application (22.9ms)
+Completed 200 OK in 69ms (Views: 47.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:08 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+Served asset /fontawesome-webfont.woff - 304 Not Modified (4ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:03:09 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/diners/1/edit" for 127.0.0.1 at 2013-01-03 22:03:10 +0100
+Processing by DinersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDiner Load (0.3ms)[0m  [1mSELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mDinerType Load (0.2ms)[0m  SELECT "diner_types".* FROM "diner_types" 
+  [1m[36mMealtype Load (0.1ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" [0m
+  Rendered diners/_form.html.haml (503.7ms)
+  Rendered diners/edit.html.haml within layouts/application (554.6ms)
+Completed 500 Internal Server Error in 562ms
+
+ActionView::Template::Error (undefined method `mealtype_id' for nil:NilClass):
+    35:     = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
+    36:   .field
+    37:     = f.label "Art der Gerichte"
+    38:     = f.collection_select :mealtype_id, Mealtype.all, :id, :name, { selected: @mealtype.mealtype_id }, { multiple: false }
+    39:   .field
+    40:     = f.label "Google Maps"
+    41:     = f.text_field :urlmaps
+  app/views/diners/_form.html.haml:38:in `block in _app_views_diners__form_html_haml___1172759045747685977_70277009414500'
+  app/views/diners/_form.html.haml:1:in `_app_views_diners__form_html_haml___1172759045747685977_70277009414500'
+  app/views/diners/edit.html.haml:3:in `_app_views_diners_edit_html_haml___2384901539718314303_70277009655820'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.6ms)
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Processing by DinersController#index as HTML
+  [1m[35mDiner Load (0.4ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered diners/index.html.haml within layouts/application (13.2ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:04:25 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/diners/new" for 127.0.0.1 at 2013-01-03 22:04:26 +0100
+Processing by DinersController#new as HTML
+  [1m[36mDinerType Load (0.3ms)[0m  [1mSELECT "diner_types".* FROM "diner_types" [0m
+  [1m[35mMealtype Load (0.2ms)[0m  SELECT "mealtypes".* FROM "mealtypes" 
+  Rendered diners/_form.html.haml (15.6ms)
+  Rendered diners/new.html.haml within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `mealtype_id' for nil:NilClass):
+    35:     = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
+    36:   .field
+    37:     = f.label "Art der Gerichte"
+    38:     = f.collection_select :mealtype_id, Mealtype.all, :id, :name, { selected: @mealtype.mealtype_id }, { multiple: false }
+    39:   .field
+    40:     = f.label "Google Maps"
+    41:     = f.text_field :urlmaps
+  app/views/diners/_form.html.haml:38:in `block in _app_views_diners__form_html_haml___1172759045747685977_70277009414500'
+  app/views/diners/_form.html.haml:1:in `_app_views_diners__form_html_haml___1172759045747685977_70277009414500'
+  app/views/diners/new.html.haml:2:in `_app_views_diners_new_html_haml__999350095794610569_70276974885140'
+  app/controllers/diners_controller.rb:29:in `new'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (48.6ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (64.2ms)
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Processing by DinersController#index as HTML
+  [1m[36mDiner Load (0.3ms)[0m  [1mSELECT "diners".* FROM "diners" [0m
+  Rendered diners/index.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /diners.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:07:53 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2013-01-03 22:07:54 +0100
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:07:54 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/diners/new" for 127.0.0.1 at 2013-01-03 22:07:55 +0100
+Processing by DinersController#new as HTML
+  [1m[35mDinerType Load (0.3ms)[0m  SELECT "diner_types".* FROM "diner_types" 
+  [1m[36mMealtype Load (0.2ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" [0m
+  Rendered diners/_form.html.haml (27.3ms)
+  Rendered diners/new.html.haml within layouts/application (29.2ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (undefined method `mealtype_ids' for nil:NilClass):
+    35:     = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
+    36:   .field
+    37:     = f.label "Art der Gerichte"
+    38:     = f.collection_select :mealtype_ids, Mealtype.all, :id, :name, { selected: @mealtype.mealtype_ids }, { multiple: false }
+    39:   .field
+    40:     = f.label "Google Maps"
+    41:     = f.text_field :urlmaps
+  app/views/diners/_form.html.haml:38:in `block in _app_views_diners__form_html_haml___1172759045747685977_70276989745460'
+  app/views/diners/_form.html.haml:1:in `_app_views_diners__form_html_haml___1172759045747685977_70276989745460'
+  app/views/diners/new.html.haml:2:in `_app_views_diners_new_html_haml__999350095794610569_70276974885140'
+  app/controllers/diners_controller.rb:29:in `new'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+Migrating to DinersMealtypesJoin (20130103205233)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+Migrating to DinersMealtypesJoin (20130103205233)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.6ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "diner_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "diners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "number" varchar(255), "zipcode" varchar(255), "city" varchar(255), "url" varchar(255), "time" text, "phone" varchar(255), "urlmaps" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "diner_type_id" integer) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "diner_id" integer, "dtime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE INDEX "index_events_on_diner_id" ON "events" ("diner_id")[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "mealtypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130103205233')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121214114520')
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121219115013')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121226094520')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130102205320')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130102205810')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130103205108')[0m
+  [1m[35m (3.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["diner_type_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["diner_type_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["diner_type_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["diner_type_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Bäckerei"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Bistro"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Café"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Kantine"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Restaurant"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Schnellrestaurant"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Imbiss"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Eisdiele"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Lounge"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00], ["name", "Kneipe"], ["updated_at", Thu, 03 Jan 2013 21:24:18 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Connecting to database specified by database.yml
+  [1m[36m (3.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+Migrating to DinersMealtypesJoin (20130103205233)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+Migrating to DinersMealtypesJoin (20130103205233)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to DinersMealtypesJoin (20130103205233)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "diners_mealtypes"[0m
+SQLite3::SQLException: no such table: diners_mealtypes: DROP TABLE "diners_mealtypes"
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (3.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+Migrating to DinersMealtypesJoin (20130103205233)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/diners/new" for 127.0.0.1 at 2013-01-03 22:34:07 +0100
+Processing by DinersController#new as HTML
+  [1m[35mDinerType Load (0.3ms)[0m  SELECT "diner_types".* FROM "diner_types" 
+  [1m[36mMealtype Load (0.2ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" [0m
+  Rendered diners/_form.html.haml (66.6ms)
+  Rendered diners/new.html.haml within layouts/application (68.8ms)
+Completed 500 Internal Server Error in 107ms
+
+ActionView::Template::Error (undefined method `mealtype_ids' for nil:NilClass):
+    35:     = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
+    36:   .field
+    37:     = f.label "Art der Gerichte"
+    38:     = f.collection_select :mealtype_ids, Mealtype.all, :id, :name, { selected: @mealtype.mealtype_ids }, { multiple: false }
+    39:   .field
+    40:     = f.label "Google Maps"
+    41:     = f.text_field :urlmaps
+  app/views/diners/_form.html.haml:38:in `block in _app_views_diners__form_html_haml___1172759045747685977_70276989745460'
+  app/views/diners/_form.html.haml:1:in `_app_views_diners__form_html_haml___1172759045747685977_70276989745460'
+  app/views/diners/new.html.haml:2:in `_app_views_diners_new_html_haml__999350095794610569_70276974885140'
+  app/controllers/diners_controller.rb:29:in `new'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (71.8ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (96.9ms)
+
+
+Started GET "/diners/new" for 127.0.0.1 at 2013-01-03 22:35:38 +0100
+Processing by DinersController#new as HTML
+  [1m[35mDinerType Load (0.3ms)[0m  SELECT "diner_types".* FROM "diner_types" 
+  [1m[36mMealtype Load (0.2ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" [0m
+  [1m[35m (0.4ms)[0m  SELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL
+SQLite3::SQLException: no such table: diners_mealtypes: SELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL
+  Rendered diners/_form.html.haml (144.8ms)
+  Rendered diners/new.html.haml within layouts/application (146.0ms)
+Completed 500 Internal Server Error in 151ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: diners_mealtypes: SELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL):
+    35:     = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
+    36:   .field
+    37:     = f.label "Art der Gerichte"
+    38:     = f.collection_select :mealtype_ids, Mealtype.all, :id, :name, { selected: @diner.mealtype_ids }, { multiple: false }
+    39:   .field
+    40:     = f.label "Google Maps"
+    41:     = f.text_field :urlmaps
+  app/views/diners/_form.html.haml:38:in `block in _app_views_diners__form_html_haml___1172759045747685977_70277001509240'
+  app/views/diners/_form.html.haml:1:in `_app_views_diners__form_html_haml___1172759045747685977_70277001509240'
+  app/views/diners/new.html.haml:2:in `_app_views_diners_new_html_haml__999350095794610569_70276974885140'
+  app/controllers/diners_controller.rb:29:in `new'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.7ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDiners (20121214114520)
+Migrating to CreateEvents (20121219115013)
+Migrating to DeviseCreateUsers (20121226094520)
+Migrating to CreateDinerTypes (20130102205320)
+Migrating to AddDinerTypIdToDiners (20130102205810)
+Migrating to CreateMealtypes (20130103205108)
+Migrating to CreateDinersMealtypesJoin (20130103213830)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "diners_mealtypes" ("diner_id" integer, "mealtype_id" integer) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130103213830')[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:41:40 +0100
+Processing by DinersController#index as HTML
+  [1m[36mDiner Load (0.2ms)[0m  [1mSELECT "diners".* FROM "diners" [0m
+  Rendered diners/index.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 121ms (Views: 99.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:41:41 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/diners/new" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Processing by DinersController#new as HTML
+  [1m[35mDinerType Load (0.2ms)[0m  SELECT "diner_types".* FROM "diner_types" 
+  [1m[36mMealtype Load (0.1ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" [0m
+  [1m[35m (0.1ms)[0m  SELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL[0m
+  Rendered diners/_form.html.haml (46.5ms)
+  Rendered diners/new.html.haml within layouts/application (48.5ms)
+Completed 200 OK in 73ms (Views: 70.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /application.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /diners.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/diners/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:41:43 +0100
+
+ActionController::RoutingError (No route matches [GET] "/diners/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:41:49 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.4ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["diner_type_id", nil], ["name", "Joeys - Sued West"], ["number", "25"], ["phone", "0251-539300"], ["street", "Lala Strasse"], ["time", "täglich von 11-23 Uhr"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["url", "http://www.joeys.de/muenster"], ["urlmaps", "http://maps.google.de/"], ["zipcode", "48145"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["diner_type_id", nil], ["name", "Papa George"], ["number", "51"], ["phone", "0251-664263"], ["street", "Wolbecker Strasse"], ["time", "täglich von 11-0 Uhr"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["url", "http://papageorge.ms/Imbiss/index.html"], ["urlmaps", "https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48155"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["diner_type_id", nil], ["name", "Mocca D'or"], ["number", "14-16"], ["phone", "0251-664263"], ["street", "Rothenburg"], ["time", "täglich von 9-1 Uhr"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["url", "http://www.mocca-d-or.de/"], ["urlmaps", "https://maps.google.de/maps?q=Rothenburg+14-16,+48143+M%C3%BCnster&hl=de&ie=UTF8&sll=51.953867,7.639747&sspn=0.017959,0.038495&hnear=Rothenburg+14,+48143+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48143"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diners" ("city", "created_at", "diner_type_id", "name", "number", "phone", "street", "time", "updated_at", "url", "urlmaps", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["city", "Münster"], ["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["diner_type_id", nil], ["name", "Stadtbäckerei Münster - Filiale Ludgeriplatz"], ["number", "1"], ["phone", "0251-3909104"], ["street", "Ludgeriplatz/Hammer Str."], ["time", "Werktags 06:30-18:00 Uhr"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["url", "http://www.stadtbaeckerei-muenster.de/"], ["urlmaps", "http://maps.google.de/maps?q=Hammer+Stra%C3%9Fe+1+48153+M%C3%BCnster&hl=de&ie=UTF8&ll=51.955163,7.626421&spn=0.006546,0.021136&sll=51.956049,7.629018&sspn=0.006546,0.021136&hnear=Hammer+Stra%C3%9Fe+1,+48153+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16"], ["zipcode", "48153"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Bäckerei"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Bistro"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Café"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Kantine"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Restaurant"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Schnellrestaurant"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Imbiss"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Eisdiele"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Lounge"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "diner_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Kneipe"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "mealtypes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Pizza"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "mealtypes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Pasta"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "mealtypes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Döner"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "mealtypes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Belegte Brötchen"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "mealtypes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Eintöpfe"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "mealtypes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Vegetarisches"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "mealtypes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Salat"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "mealtypes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00], ["name", "Gyros"], ["updated_at", Thu, 03 Jan 2013 21:45:01 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Processing by DinersController#index as HTML
+  [1m[35mDiner Load (0.5ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered diners/index.html.haml within layouts/application (13.5ms)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:07 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started DELETE "/diners/1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Processing by DinersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"934bZ92kg51tc6Mh+HV8yeR77c0YGT1JWKFO93+0R1k=", "id"=>"1"}
+  [1m[36mDiner Load (0.3ms)[0m  [1mSELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mMealtype Load (0.2ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" = 1[0m
+  [1m[35mSQL (8.2ms)[0m  DELETE FROM "diners" WHERE "diners"."id" = ?  [["id", 1]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/diners
+Completed 302 Found in 16ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Processing by DinersController#index as HTML
+  [1m[35mDiner Load (0.3ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered diners/index.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /diners.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:11 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started DELETE "/diners/2" for 127.0.0.1 at 2013-01-03 22:45:12 +0100
+Processing by DinersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"934bZ92kg51tc6Mh+HV8yeR77c0YGT1JWKFO93+0R1k=", "id"=>"2"}
+  [1m[36mDiner Load (0.2ms)[0m  [1mSELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mMealtype Load (0.2ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" = 2[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "diners" WHERE "diners"."id" = ?  [["id", 2]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/diners
+Completed 302 Found in 9ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:45:12 +0100
+Processing by DinersController#index as HTML
+  [1m[35mDiner Load (0.3ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered diners/index.html.haml within layouts/application (10.3ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:13 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started DELETE "/diners/3" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Processing by DinersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"934bZ92kg51tc6Mh+HV8yeR77c0YGT1JWKFO93+0R1k=", "id"=>"3"}
+  [1m[36mDiner Load (0.3ms)[0m  [1mSELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mMealtype Load (0.2ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" = 3[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "diners" WHERE "diners"."id" = ?  [["id", 3]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/diners
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Processing by DinersController#index as HTML
+  [1m[35mDiner Load (0.2ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered diners/index.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /diners.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:15 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started DELETE "/diners/4" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Processing by DinersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"934bZ92kg51tc6Mh+HV8yeR77c0YGT1JWKFO93+0R1k=", "id"=>"4"}
+  [1m[36mDiner Load (0.2ms)[0m  [1mSELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mMealtype Load (0.2ms)[0m  [1mSELECT "mealtypes".* FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" = 4[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "diners" WHERE "diners"."id" = ?  [["id", 4]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/diners
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Processing by DinersController#index as HTML
+  [1m[35mDiner Load (0.3ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered diners/index.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /diners.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:17 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/diners/new" for 127.0.0.1 at 2013-01-03 22:45:18 +0100
+Processing by DinersController#new as HTML
+  [1m[36mDinerType Load (0.3ms)[0m  [1mSELECT "diner_types".* FROM "diner_types" [0m
+  [1m[35mMealtype Load (0.2ms)[0m  SELECT "mealtypes".* FROM "mealtypes" 
+  [1m[36m (0.2ms)[0m  [1mSELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL
+  Rendered diners/_form.html.haml (26.6ms)
+  Rendered diners/new.html.haml within layouts/application (28.8ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:18 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:18 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/diners/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:19 +0100
+
+ActionController::RoutingError (No route matches [GET] "/diners/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:27 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/diners/new" for 127.0.0.1 at 2013-01-03 22:45:41 +0100
+Processing by DinersController#new as HTML
+  [1m[36mDinerType Load (0.3ms)[0m  [1mSELECT "diner_types".* FROM "diner_types" [0m
+  [1m[35mMealtype Load (0.2ms)[0m  SELECT "mealtypes".* FROM "mealtypes" 
+  [1m[36m (0.2ms)[0m  [1mSELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL
+  Rendered diners/_form.html.haml (79.5ms)
+  Rendered diners/new.html.haml within layouts/application (81.7ms)
+Completed 200 OK in 107ms (Views: 105.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/diners/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:42 +0100
+
+ActionController::RoutingError (No route matches [GET] "/diners/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:45:48 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/diners/5" for 127.0.0.1 at 2013-01-03 22:46:11 +0100
+Processing by DinersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDiner Load (0.2ms)[0m  [1mSELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  Rendered diners/show.html.haml within layouts/application (22.9ms)
+Completed 200 OK in 67ms (Views: 63.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/diners/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:46:12 +0100
+
+ActionController::RoutingError (No route matches [GET] "/diners/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:46:15 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/diners" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Processing by DinersController#index as HTML
+  [1m[35mDiner Load (0.3ms)[0m  SELECT "diners".* FROM "diners" 
+  Rendered diners/index.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:46:57 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:46:58 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/diners/5" for 127.0.0.1 at 2013-01-03 22:46:58 +0100
+Processing by DinersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDiner Load (0.1ms)[0m  [1mSELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  Rendered diners/show.html.haml within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `mealtype' for #<Diner:0x007fd546626a60>):
+    29:   = @diner.diner_type.try(:name)
+    30: %p
+    31:   %b Art der Gerichte:
+    32:   = @diner.mealtype.try(:name)
+    33: %p
+    34:   %b Google Maps:
+    35:   = @diner.urlmaps
+  app/views/diners/show.html.haml:32:in `_app_views_diners_show_html_haml___2843156730948953716_70276992818640'
+  app/controllers/diners_controller.rb:18:in `show'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.5ms)
+
+
+Started GET "/diners/5" for 127.0.0.1 at 2013-01-03 22:55:02 +0100
+Processing by DinersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mDiner Load (0.2ms)[0m  SELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1  [["id", "5"]]
+  Rendered diners/show.html.haml within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `mealtype' for #<Diner:0x007fd544421370>):
+    29:   = @diner.diner_type.try(:name)
+    30: %p
+    31:   %b Art der Gerichte:
+    32:   = @diner.mealtype.try(:id)
+    33: %p
+    34:   %b Google Maps:
+    35:   = @diner.urlmaps
+  app/views/diners/show.html.haml:32:in `_app_views_diners_show_html_haml___2843156730948953716_70276974990780'
+  app/controllers/diners_controller.rb:18:in `show'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.3ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:55:19 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/diners/new" for 127.0.0.1 at 2013-01-03 22:57:08 +0100
+Processing by DinersController#new as HTML
+  [1m[36mDinerType Load (0.3ms)[0m  [1mSELECT "diner_types".* FROM "diner_types" [0m
+  [1m[35mMealtype Load (0.2ms)[0m  SELECT "mealtypes".* FROM "mealtypes" 
+  [1m[36m (0.2ms)[0m  [1mSELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "mealtypes".id FROM "mealtypes" INNER JOIN "diners_mealtypes" ON "mealtypes"."id" = "diners_mealtypes"."mealtype_id" WHERE "diners_mealtypes"."diner_id" IS NULL
+  Rendered diners/_form.html.haml (20.5ms)
+  Rendered diners/new.html.haml within layouts/application (22.4ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-03 22:57:08 +0100
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.css?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /diners.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /twitter/bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/diners.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /diners.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/diners/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:57:09 +0100
+
+ActionController::RoutingError (No route matches [GET] "/diners/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2013-01-03 22:57:10 +0100
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/lenchen2310/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/diners/5" for 127.0.0.1 at 2013-01-03 22:57:11 +0100
+Processing by DinersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDiner Load (0.3ms)[0m  [1mSELECT "diners".* FROM "diners" WHERE "diners"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  Rendered diners/show.html.haml within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `mealtype' for #<Diner:0x007fd544a0a9f8>):
+    29:   = @diner.diner_type.try(:name)
+    30: %p
+    31:   %b Art der Gerichte:
+    32:   = @diner.mealtype.try(:id)
+    33: %p
+    34:   %b Google Maps:
+    35:   = @diner.urlmaps
+  app/views/diners/show.html.haml:32:in `_app_views_diners_show_html_haml___2843156730948953716_70276974990780'
+  app/controllers/diners_controller.rb:18:in `show'
+
+
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/lenchen2310/.rvm/gems/ruby-1.9.3-p327@dineout/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.9ms)

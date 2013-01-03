@@ -25,8 +25,11 @@
   %b Telefonnummer:
   = @diner.phone
 %p
-  %b Art:
+  %b Art des Diners:
   = @diner.diner_type.try(:name)
+%p
+  %b Art der Gerichte:
+  = @diner.mealtype.try(:id)
 %p
   %b Google Maps:
   = @diner.urlmaps

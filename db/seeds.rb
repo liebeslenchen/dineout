@@ -22,3 +22,14 @@ DinerType.create name: 'Imbiss'
 DinerType.create name: 'Eisdiele'
 DinerType.create name: 'Lounge'
 DinerType.create name: 'Kneipe'
+
+Mealtype.create name: 'Pizza'
+Mealtype.create name: 'Pasta'
+Mealtype.create name: 'Döner'
+Mealtype.create name: 'Belegte Brötchen'
+Mealtype.create name: 'Eintöpfe'
+Mealtype.create name: 'Vegetarisches'
+Mealtype.create name: 'Salat'
+Mealtype.create name: 'Gyros'
+
+
