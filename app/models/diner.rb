@@ -1,5 +1,5 @@
 class Diner < ActiveRecord::Base
-  attr_accessible :city, :name, :number, :phone, :street, :time, :url, :urlmaps, :zipcode, :diner_type_id, :mealtype_id
+  attr_accessible :city, :name, :number, :phone, :street, :time, :url, :urlmaps, :zipcode, :diner_type_id, :mealtype_ids
 
   has_many :events
   has_and_belongs_to_many :mealtypes

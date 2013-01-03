@@ -29,7 +29,8 @@
   = @diner.diner_type.try(:name)
 %p
   %b Art der Gerichte:
-  = @diner.mealtype.try(:id)
+  - @diner.mealtypes.each do |mealtype|
+    = mealtype.name
 %p
   %b Google Maps:
   = @diner.urlmaps

@@ -56,6 +56,7 @@ class DinersController < ApplicationController
   # PUT /diners/1
   # PUT /diners/1.json
   def update
+    params[:diner][:mealtype_ids] ||=[]
     @diner = Diner.find(params[:id])
 
     respond_to do |format|

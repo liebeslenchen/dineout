@@ -35,7 +35,10 @@
     = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
   .field
     = f.label "Art der Gerichte"
-    = f.collection_select :mealtype_ids, Mealtype.all, :id, :name, { selected: @diner.mealtype_ids }, { multiple: true }
+    - for mealtype in Mealtype.find(:all)
+      %div
+      = check_box_tag "diner[mealtype_ids][]", mealtype.id, @diner.mealtypes.include?(mealtype)
+      = mealtype.name
   .field
     = f.label "Google Maps"
     = f.text_field :urlmaps
