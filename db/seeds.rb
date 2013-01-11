@@ -1,11 +1,9 @@
 # encoding: UTF-8
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Admin role
+admin = User.create email: 'admin@dineout.com', password: 'passit', password_confirmation: 'passit'
+admin.add_role :admin
+
 
 Diner.create city: 'Münster', name: 'Joeys - Sued West', number: '25', phone: '0251-539300', street: 'Lala Strasse', time: 'täglich von 11-23 Uhr' , url: 'http://www.joeys.de/muenster', urlmaps: 'http://maps.google.de/', zipcode: '48145'
 Diner.create city: 'Münster', name: 'Papa George', number: '51', phone: '0251-664263', street: 'Wolbecker Strasse', time: 'täglich von 11-0 Uhr' , url: 'http://papageorge.ms/Imbiss/index.html', urlmaps: 'https://maps.google.de/maps?q=Wolbecker+Stra%C3%9Fe+51,+M%C3%BCnster&hl=de&ie=UTF8&sll=51.950085,7.624097&sspn=0.287359,0.615921&oq=Wolbecker+Stra%C3%9Fe+51&hnear=Wolbecker+Stra%C3%9Fe+51,+48155+M%C3%BCnster,+Nordrhein-Westfalen&t=m&z=16', zipcode: '48155'
