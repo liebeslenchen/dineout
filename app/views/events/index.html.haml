@@ -4,18 +4,24 @@
   %tr
     %th Diner
     %th Uhrzeit
-    %th
-    %th
-    %th
+    - if can?(:read, Event)
+      %th
+    - if can?(:update, Event)
+      %th
+    - if can?(:delete, Event)
+      %th
 
   - @events.each do |event|
     %tr
       %td= event.diner.name
       %td= event.dtime
-      %td.icon-list= link_to '  Detailansicht', event
-      %td.icon-repeat= link_to '  Bearbeiten', edit_event_path(event)
-      %td.icon-remove-sign= link_to '  Entfernen', event, method: :delete, data: { confirm: 'Are you sure?' }
+      - if can?(:read, Event)
+        %td.icon-list= link_to '  Detailansicht', event
+      - if can?(:update, Event)
+        %td.icon-repeat= link_to '  Bearbeiten', edit_event_path(event)
+      - if can?(:delete, Event)
+        %td.icon-remove-sign= link_to '  Entfernen', event, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
-= link_to 'Neues Event anlegen', new_event_path, :class => "btn"
+- if can?(:create, Event)
+  = link_to 'Neues Event anlegen', new_event_path, :class => "btn"

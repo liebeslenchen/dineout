@@ -5,19 +5,25 @@
     %th Name
     %th Straße
     %th Stadt
-    %th
-    %th
-    %th
+    - if can?(:read, Diner)
+      %th
+    - if can?(:update, Diner)
+      %th
+    - if can?(:delete, Diner)
+      %th
 
   - @diners.each do |diner|
     %tr
       %td= diner.name
       %td= diner.street
       %td= diner.city
-      %td.icon-list= link_to ' Detailansicht', diner
-      %td.icon-repeat= link_to ' Bearbeiten', edit_diner_path(diner)
-      %td.icon-remove-sign= link_to ' Entfernen', diner, method: :delete, data: { confirm: 'Are you sure?' }
+      - if can?(:read, Diner)
+        %td.icon-list= link_to ' Detailansicht', diner
+      - if can?(:update, Diner)
+        %td.icon-repeat= link_to ' Bearbeiten', edit_diner_path(diner)
+      - if can?(:delete, Diner)
+        %td.icon-remove-sign= link_to ' Entfernen', diner, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
-= link_to 'Neues Diner anlegen', new_diner_path, :class => "btn"
+- if can?(:create, Event)
+  = link_to 'Neues Diner anlegen', new_diner_path, :class => "btn"
