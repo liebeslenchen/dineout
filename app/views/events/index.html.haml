@@ -4,7 +4,7 @@
   %tr
     %th Diner
     %th Uhrzeit
-    %th
+    %th 
     %th
     %th
 
@@ -12,15 +12,15 @@
     %tr
       %td= event.diner.name
       %td= event.dtime
-      %td.icon-list 
+      %td 
         - if can?(:read, event)
-          %icon-list = link_to '  Detailansicht', event
-      %td.icon-repeat
+          %p.icon-list= link_to '  Detailansicht', event
+      %td
         - if can?(:update, event)
-          = link_to '  Bearbeiten', edit_event_path(event)
-      %td.icon-remove-sign
+          %p.icon-repeat= link_to '  Bearbeiten', edit_event_path(event)
+      %td
         - if can?(:delete, event)
-          = link_to '  Entfernen', event, method: :delete, data: { confirm: 'Are you sure?' }
+          %p.icon-remove-sign= link_to '  Entfernen', event, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 - if can?(:create, Event)
