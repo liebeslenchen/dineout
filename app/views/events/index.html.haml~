@@ -12,10 +12,16 @@
     %tr
       %td= event.diner.name
       %td= event.dtime
-      %td.icon-list= link_to 'Detailansicht', event
-      %td.icon-repeat= link_to 'Bearbeiten', edit_event_path(event)
-      %td.icon-remove-sign= link_to 'Entfernen', event, method: :delete, data: { confirm: 'Are you sure?' }
+      %td 
+        - if can?(:read, event)
+          %icon-list = link_to '  Detailansicht', event
+      %td.icon-repeat
+        - if can?(:update, event)
+          = link_to '  Bearbeiten', edit_event_path(event)
+      %td.icon-remove-sign
+        - if can?(:delete, event)
+          = link_to '  Entfernen', event, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
-= link_to 'Neues Event anlegen', new_event_path, :class => "btn"
+- if can?(:create, Event)
+  = link_to 'Neues Event anlegen', new_event_path, :class => "btn"

@@ -17,7 +17,6 @@
     %link(href="images/favicon.ico" rel="shortcut icon")
 
 
-  %body{:style => "background-color: rgb(165,207,0)"}
 
     .navbar.navbar-fluid-top
       .navbar-inner

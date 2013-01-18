@@ -9,9 +9,9 @@ class Ability
         else
             #Users
             can :read, :all
-            can :manage, Event
+	    can :create, Event	
+            can :manage, Event, user_id: user.id
             can :manage, Diner
-            #can :manage, Event, user_id: user.id
         end
     else
         #Guests

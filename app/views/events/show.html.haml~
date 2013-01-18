@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Diner:
+  = @event.diner.name
+%p
+  %b Uhrzeit:
+  = @event.dtime
+
+- if can?(:update, @event)
+= link_to 'Ändern', edit_event_path(@event)
+\|
+= link_to 'Zurück', events_path
