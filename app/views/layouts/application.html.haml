@@ -31,10 +31,7 @@
             %ul.nav
               %li= link_to "Events", "/events"
               %li= link_to "Diners", "/diners"
-
-            %ul.nav.pull-right
               - if current_user
-                %li= link_to "Wilkommen, #{current_user.email}!", ""
                 %li= link_to "Ausloggen", destroy_user_session_path, method: :delete
               - else
                 %li= link_to 'Einloggen', new_user_session_path
