@@ -32,8 +32,7 @@
   - @diner.mealtypes.each do |mealtype|
     = mealtype.name
 %p
-  %b Google Maps:
-  = @diner.urlmaps
+  %iframe{ width: 600, height: 400, frameborder: 0, scrolling: 'no', marginheight: 0, marginwidht: 0, src: iframe_urls(@diner) }
 
 = link_to 'Ändern', edit_diner_path(@diner)
 \|
