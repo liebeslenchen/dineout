@@ -1,9 +1,12 @@
 # encoding: UTF-8
 
 # Admin role
-admin = User.create email: 'admin@dineout.com', password: 'passit', password_confirmation: 'passit'
+admin = User.create email: 'admin@dineout.com', username: 'Admin', password: 'passit', password_confirmation: 'passit'
 admin.add_role :admin
 
+User.create email: 'lena@dineout.com', username: 'Lena', password: 'passit', password_confirmation: 'passit'
+User.create email: 'gamze@dineout.com', username: 'Gamze', password: 'passit', password_confirmation: 'passit'
+User.create email: 'marlen@dineout.com', username: 'Marlen', password: 'passit', password_confirmation: 'passit'
 
 #cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #Mayor.create(:name => 'Emanuel', :city => cities.first)
