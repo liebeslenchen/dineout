@@ -32,7 +32,7 @@
               %li= link_to "Events", "/events"
               %li= link_to "Diners", "/diners"
               - if current_user != nil && current_user.has_role?(:admin)
-                %li= link_to "Administartion", "/admin"
+                %li= link_to "Administration", "/admin"
             %ul.nav.pull-right  
               - if current_user
                 %li= link_to current_user.username, edit_user_registration_path
