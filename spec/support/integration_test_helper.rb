@@ -1,8 +1,8 @@
 module IntegrationTestHelper
 	def sign_in(user)
-		click_link 'Einloggen'
-		fill_in "user_email", with: user.email
-		fill_in "user_password", with: 'hackme'
-		click_button 'Sign in'
+		click_link 'Anmelden'
+		fill_in "user_username", with: user.username
+		fill_in "user_password", with: user.password
+		click_button 'Anmelden'
 	end
 end
