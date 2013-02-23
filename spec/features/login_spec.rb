@@ -34,6 +34,16 @@ describe 'Login' do
 			click_link "Abmelden"
 			page.should have_content 'Anmelden'
 		end
+
+		it 'allows to change account' do
+			page.should have_content user.username
+			click_link user.username
+			fill_in "user_username", with: 'NeuerUserName'
+			fill_in "user_current_password", with: user.password
+			click_button 'Update'
+			page.should have_content "NeuerUserName"
+		end 
+
 	end
 end
 
