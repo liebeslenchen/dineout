@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+ ul.nav {
+ 	font-size: 20px;
+ 	text-align: center
+ }
+
+

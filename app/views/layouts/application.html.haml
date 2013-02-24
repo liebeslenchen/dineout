@@ -19,34 +19,25 @@
 
   %body
 
-    .navbar.navbar-fluid-top
+    .navbar
       .navbar-inner
-        .container-fluid
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to(image_tag("dineOut.png", :width => "125"), "/events")
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Events", "/events"
-              %li= link_to "Diners", "/diners"
-              - if current_user != nil && current_user.has_role?(:admin)
-                %li= link_to "Administration", "/admin"
-            %ul.nav.pull-right  
-              - if current_user
-                %li= link_to current_user.username, edit_user_registration_path
-                %li= link_to 'Abmelden', destroy_user_session_path, method: :delete
-              - else
-                %li= link_to 'Anmelden', new_user_session_path
-                %li= link_to 'Registrieren', new_user_registration_path
-
-    .container-fluid
-
-      .row-fluid          
+        %p.nav= link_to(image_tag("dineOut.png", :width => "125"), "/events")
+        %ul.nav
+          %li= link_to "Events", "/events"
+          %li= link_to "Diners", "/diners"
+          - if current_user != nil && current_user.has_role?(:admin)
+            %li= link_to "Administration", "/admin"
+        %ul.nav.pull-right
+          - if current_user
+            %li{:style => "font-weight: bold"}= link_to current_user.username, edit_user_registration_path
+            %li= link_to 'Abmelden', destroy_user_session_path, method: :delete
+          - else
+            %li= link_to 'Anmelden', new_user_session_path
+            %li= link_to 'Registrieren', new_user_registration_path
+      .row-fluid
         .span9
           = yield
-    
+
       %footer
         %p
         %p &copy; dineOut 2013
