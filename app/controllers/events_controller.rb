@@ -54,6 +54,13 @@ class EventsController < ApplicationController
     end
   end
 
+  def participate
+    @Event = Event.find(params[:id])
+    @Event.users << current_user 
+    @Event.save
+    #redirect_to action: :show, id: @post.id 
+  end
+
   # PUT /events/1
   # PUT /events/1.json
   def update
