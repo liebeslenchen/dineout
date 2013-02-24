@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :role_ids
   # attr_accessible :title, :body
   has_many :events
+
+  has_many :participations
+  has_many:events, through: :participations
+
 end
