@@ -3,7 +3,7 @@ class DinersController < ApplicationController
   # GET /diners
   # GET /diners.json
   def index
-    @diners = Diner.all
+    @diners = Diner.order('name ASC').all
 
     respond_to do |format|
       format.html # index.html.erb
