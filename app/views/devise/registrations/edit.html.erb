@@ -9,15 +9,15 @@
   <div><%= f.label "E-Mail" %>
   <%= f.email_field :email %></div>
 
-  <div><%= f.label "Password erstellen" %> 
+  <div><%= f.label "Passwort erstellen" %> 
   	<%= f.password_field :password, :autocomplete => "off" %>
   	<i>&nbsp;(freilassen, wenn es nicht geändert werden soll)</i>
   </div>
 
-  <div><%= f.label "Password bestätigen" %>
+  <div><%= f.label "Passwort bestätigen" %>
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label "Aktuelles Password" %> 
+  <div><%= f.label "Aktuelles Passwort" %> 
   	<%= f.password_field :current_password %>
 	<i>&nbsp;(wir brauchen das aktuelle Passwort zur Bestätigung der Änderungen)</i>
   </div>
