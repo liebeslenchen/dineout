@@ -14,7 +14,9 @@
 
  ul.nav {
  	font-size: 20px;
- 	text-align: center
  }
 
+.myNavMargin{
+  margin-top: 25px;
+}
 
