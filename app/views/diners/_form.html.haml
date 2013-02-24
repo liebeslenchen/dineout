@@ -1,46 +1,66 @@
-= form_for @diner do |f|
+= form_for(@diner, :html => { :class => 'form-horizontal' }) do |f|
   - if @diner.errors.any?
     #error_explanation
       %h2= "#{pluralize(@diner.errors.count, "error")} prohibited this diner from being saved:"
       %ul
         - @diner.errors.full_messages.each do |msg|
           %li= msg
-
+  %div.control-group
   .field
-    = f.label "Name"
-    = f.text_field :name
+    = f.label "Name", :class => 'control-label'
+    %div.controls
+      = f.text_field :name
+  %div.control-group
   .field
-    = f.label "Straße"
-    = f.text_field :street
+    = f.label "Straße", :class => 'control-label'
+    %div.controls
+      = f.text_field :street
+  %div.control-group
   .field
-    = f.label "Hausnummer"
-    = f.text_field :number
+    = f.label "Hausnummer", :class => 'control-label'
+    %div.controls
+      = f.text_field :number
+  %div.control-group  
   .field
-    = f.label "PLZ"
-    = f.text_field :zipcode
+    = f.label "PLZ", :class => 'control-label'
+    %div.controls
+      = f.text_field :zipcode
+  %div.control-group 
   .field
-    = f.label "Stadt"
-    = f.text_field :city
+    = f.label "Stadt", :class => 'control-label'
+    %div.controls
+      = f.text_field :city
+  %div.control-group 
   .field
-    = f.label "Webseite"
-    = f.text_field :url
+    = f.label "Webseite", :class => 'control-label'
+    %div.controls
+      = f.text_field :url
+  %div.control-group 
   .field
-    = f.label "Öffnungszeiten"
-    = f.text_area :time
+    = f.label "Öffnungszeiten", :class => 'control-label'
+    %div.controls
+      = f.text_area :time, :rows => '5'
+  %div.control-group 
   .field
-    = f.label "Telefonnummer"
-    = f.text_field :phone
+    = f.label "Telefonnummer", :class => 'control-label'
+    %div.controls
+      = f.text_field :phone
+  %div.control-group 
   .field
-    = f.label "Art des Diners"
-    = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
+    = f.label "Art des Diners", :class => 'control-label'
+    %div.controls
+      = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
+  %div.control-group 
   .field
-    = f.label "Art der Gerichte"
+    = f.label "Art der Gerichte", :class => 'control-label'
     - for mealtype in Mealtype.find(:all)
-      %div
-      = check_box_tag "diner[mealtype_ids][]", mealtype.id, @diner.mealtypes.include?(mealtype)
-      = mealtype.name
+      %div.controls
+        = check_box_tag "diner[mealtype_ids][]", mealtype.id, @diner.mealtypes.include?(mealtype)
+        = mealtype.name
+  %div.control-group 
   .field
-    = f.label "Google Maps"
-    = f.text_field :urlmaps
+    = f.label "Google Maps", :class => 'control-label'
+    %div.controls
+      = f.text_field :urlmaps
   .actions
     = f.submit 'Speichern'
