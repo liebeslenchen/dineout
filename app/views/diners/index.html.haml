@@ -1,5 +1,15 @@
 %h1 Deine Diners
 
+%form.form-inline
+  %p
+    %select.span3{:name => "type_search"}
+      %option{:value => "-1"} Wähle eine Dinerart
+      - d = DinerType.order('name ASC').all
+      - d.each do |type|      
+        %option{:value => type.id} 
+          = type.name
+    %button.btn{:type => "submit"} Filtern
+
 %table.table.table-striped
   %tr
     %th Name

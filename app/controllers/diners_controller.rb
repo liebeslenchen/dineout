@@ -3,7 +3,7 @@ class DinersController < ApplicationController
   # GET /diners
   # GET /diners.json
   def index
-    @diners = Diner.order('name ASC').all
+    @diners = Diner.type_search(params[:type_search]).page(params[:page]).order('name ASC')
 
     respond_to do |format|
       format.html # index.html.erb
