@@ -56,9 +56,9 @@ class EventsController < ApplicationController
   end
 
   def participate
-    @event = Event.find(params[:id])
-    @event.users << current_user 
-    @event.save
+    @Event = Event.find(params[:id])
+    @Event.users << current_user 
+    @Event.save
     #redirect_to action: :show, id: @post.id 
   end
 
