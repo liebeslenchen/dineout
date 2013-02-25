@@ -26,7 +26,9 @@
   .field
     = f.label "Teilnehmer", :class => 'control-label'
     %div.controls
-    = f.collection_select :user_ids, User.all, :id, :username, { selected: @event.user_ids },{ multiple: true }
-
+    - @event.users.each do |user|
+      = user.username
+    
+  %div.control-group 
   .actions
-    = f.submit 'Speichern'
+    = f.submit 'Speichern' 
