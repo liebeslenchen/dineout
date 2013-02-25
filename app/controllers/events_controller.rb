@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event.user = current_user 
-    @event.users << current_user
+    #@event.users << current_user
 
     respond_to do |format|
       if @event.save
@@ -58,8 +58,8 @@ class EventsController < ApplicationController
   def participate
     @event = Event.find(params[:id])
     @event.users << current_user 
-    @event.save
-    #redirect_to action: :show, id: @post.id 
+    @event.save 
+    redirect_to action: :show, id: @event.id 
   end
 
   # PUT /events/1
