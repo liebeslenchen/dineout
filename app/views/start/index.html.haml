@@ -1,1 +1,21 @@
-%h1 Willkommen zu dineOut
+%header{:style => 'float: left'}
+  
+  %h1 Willkommen bei dineOut 
+  %br
+  %h4 
+    Wenn du deinen Mittag koordinieren möchtets, 
+    %br dann ist dineOut genau das richtige für dich!
+    %br Probiere es einfach aus!
+  
+  %br
+  %p
+    = link_to 'Registrieren', new_user_registration_path, :class => 'btn-large btn'
+    = link_to 'Anmelden', new_user_session_path, :class => 'btn-large btn'
+
+%br
+%br
+%br
+  =image_tag("dineOut.png", :width => "350")  
+  
+
+
