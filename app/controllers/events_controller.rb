@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event.user = current_user 
-    #@event.users << current_user
+    @event.users << current_user
 
     respond_to do |format|
       if @event.save
