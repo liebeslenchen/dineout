@@ -23,7 +23,7 @@
       .navbar-inner
         .container-fluid
           %ul.nav
-            %li= link_to(image_tag("dineOut.png", :width => "140"), "/events")
+            %li= link_to(image_tag("dineOut.png", :width => "140"), :root)
             %li.myNavMargin= link_to "Events", "/events"
             %li.myNavMargin= link_to "Diners", "/diners"
             - if current_user != nil && current_user.has_role?(:admin)
