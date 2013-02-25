@@ -33,6 +33,7 @@
 %p
   %iframe{ width: 600, height: 400, frameborder: 0, scrolling: 'no', marginheight: 0, marginwidht: 0, src: iframe_urls(@diner) }
 
-= link_to 'Ändern', edit_diner_path(@diner)
-\|
+- if can?(:update, @event)
+  = link_to 'Ändern', edit_diner_path(@diner)
+  \|
 = link_to 'Zurück', diners_path
