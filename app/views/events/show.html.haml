@@ -2,7 +2,7 @@
 %h1 Event
 
 %p
-  - if can?(:update, @event)
+  - if can?(:update, @event) and !@event.users.include?(current_user)
     = link_to ' Am Event teilnehmen', participate_event_path(@event.id), :method => :post, :class => "btn"
 
 %p
@@ -10,7 +10,7 @@
   = @event.diner.name
 %p
   %b Uhrzeit:
-  = @event.dtime
+  = @event.dtime.strftime("%H:%M")
 %p
   %b Ersteller:  
   = @event.user.username

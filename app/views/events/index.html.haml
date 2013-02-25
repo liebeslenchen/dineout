@@ -5,16 +5,20 @@
     %th Diner
     %th Uhrzeit
     %th Teilnehmer
-    %th
+    %th Dabei
     %th 
+    %th
     %th
     %th
 
   - @events.each do |event|
     %tr
       %td= event.diner.name
-      %td= event.dtime
+      %td= event.dtime.strftime("%H:%M")
       %td= event.users.count
+      %td
+        - if event.users.include?(current_user)        
+          %p.icon-ok
       %td 
         - if can?(:read, event)
           %p.icon-list= link_to '  Detailansicht', event
@@ -25,7 +29,7 @@
         - if can?(:delete, event)
           %p.icon-remove-sign= link_to '  Entfernen', event, method: :delete, data: { confirm: 'Are you sure?' }
       %td
-        - if current_user != nil 
+        - if current_user != nil and !event.users.include?(current_user)
           %p.icon-share-alt= link_to ' Teilnehmen', participate_event_path(event.id), :method => :post     
 
 %br
