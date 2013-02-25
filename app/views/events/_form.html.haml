@@ -16,7 +16,7 @@
   .field
     = f.label 'Diner', :class => 'control-label'
     %div.controls
-    = f.collection_select :diner_id, Diner.all, :id, :name, { selected: @event.diner_id }, { multiple: false }
+    = f.collection_select :diner_id, Diner.order('name ASC').all, :id, :name, { selected: @event.diner_id }, { multiple: false }
   %div.control-group
   .field
     = f.label 'Uhrzeit', :class => 'control-label'

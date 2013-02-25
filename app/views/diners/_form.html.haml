@@ -49,11 +49,11 @@
   .field
     = f.label "Art des Diners", :class => 'control-label'
     %div.controls
-      = f.collection_select :diner_type_id, DinerType.all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
+      = f.collection_select :diner_type_id, DinerType.order('name ASC').all, :id, :name, { selected: @diner.diner_type_id }, { multiple: false }
   %div.control-group 
   .field
     = f.label "Art der Gerichte", :class => 'control-label'
-    - for mealtype in Mealtype.find(:all)
+    - for mealtype in Mealtype.find(:all, :order => 'name ASC')
       %div.controls
         = check_box_tag "diner[mealtype_ids][]", mealtype.id, @diner.mealtypes.include?(mealtype)
         = mealtype.name
