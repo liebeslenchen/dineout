@@ -4,6 +4,8 @@
   %tr
     %th Diner
     %th Uhrzeit
+    %th Teilnehmer
+    %th
     %th 
     %th
     %th
@@ -12,15 +14,19 @@
     %tr
       %td= event.diner.name
       %td= event.dtime
+      %td= event.users.count
       %td 
         - if can?(:read, event)
           %p.icon-list= link_to '  Detailansicht', event
       %td
-        - if can?(:update, event)
+        - if can?(:update, event) and event.user == current_user
           %p.icon-repeat= link_to '  Bearbeiten', edit_event_path(event)
       %td
         - if can?(:delete, event)
           %p.icon-remove-sign= link_to '  Entfernen', event, method: :delete, data: { confirm: 'Are you sure?' }
+      %td
+        - if current_user != nil 
+          %p.icon-share-alt= link_to ' Teilnehmen', participate_event_path(event.id), :method => :post     
 
 %br
 - if can?(:create, Event)

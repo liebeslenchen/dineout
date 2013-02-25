@@ -6,6 +6,7 @@ Dineout::Application.routes.draw do
   resources :events
   root to: 'events#index'
 
+  match '/events/:id/participate', :to => 'events#participate', :as => 'participate_event'
 
   resources :diners
 end

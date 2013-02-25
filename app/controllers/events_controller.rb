@@ -3,8 +3,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
-
+    @events = Event.find(:all, :conditions => ["date(dtime) = ?", Date.today], :order => 'dtime ASC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -42,6 +41,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event.user = current_user 
+    @event.users << current_user
 
     respond_to do |format|
       if @event.save
@@ -52,6 +52,13 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def participate
+    @event = Event.find(params[:id])
+    @event.users << current_user 
+    @event.save 
+    redirect_to action: :show, id: @event.id 
   end
 
   # PUT /events/1
