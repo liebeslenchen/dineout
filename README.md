@@ -24,13 +24,33 @@ dineOut ist ein Tool zur Koordination von Mittagsaktivitäten
 
          bundle install
          
-* Datenbank initiaisieren und Demodaten anlegen:
+* Demodaten und Testdaten anlegen:
 
-         rake db:migrate
-         rake db:seed
-         
+         rake db:reset
+         rake db:test:prepare
+
+* dineOut starten
+
+          rails server
+
+### Probleme bei der Installation?
+* Dies hat uns damals geholfen:
+
+          sudo aptitude install libv8-dev
+          sudo apt-get install g++
+          sudo apt-get install bundle-essential
 
 ## Start
+### Übersicht
+Um euch bei dineOut anzumelden haben wir die folgenden Benutzer angelegt (nur User, keine Adminfunktion):
+* Benutzername: Peter, Passwort: passit
+* Benutzername: Thomas, Passwort: passit
+
+Außerdem gibt es noch einen Admin (mit den Rechten um alles zu bearbeiten und ActiveAdmin zu nutzen):
+* Benutzername: Admin, Passwort: passit
+
+#### Weitere Benutzer (Passwort ist immer "passit")
+* Lean, Gamze, Marlen, Felix, Verena, Julia,Lukas, Max, Simon, Laura, Linda, Michael, Stefan, Anne
 
 ## Heroku
 http://dineout.herokuapp.com/
