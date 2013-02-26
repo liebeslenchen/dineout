@@ -6,7 +6,7 @@ describe 'Login' do
 	end
 
 	it 'allows to sign up' do
-		click_link 'Registrieren' 
+		first(:link, 'Registrieren').click 
 		fill_in "user_username", with: 'Test'
 		fill_in "user_email", with: 'test@dineout.com'
 		fill_in "user_password", with: 'hackme'
