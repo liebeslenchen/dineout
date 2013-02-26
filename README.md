@@ -29,7 +29,7 @@ dineOut ist ein Tool zur Koordination von Mittagsaktivitäten
          rake db:reset
          rake db:test:prepare
 
-* dineOut starten
+* dineOut starten:
 
           rails server
 
