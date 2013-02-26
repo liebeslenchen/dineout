@@ -1,17 +1,25 @@
 %header{:style => 'float: left'}
-  
-  %h1 Willkommen bei dineOut 
-  %br
-  %h4 
-    Wenn du deinen Mittag koordinieren möchtets,
-    %br dann ist dineOut genau das richtige für dich!
-    %br Probiere es einfach aus!
-  
-  %br
-  %p
-    -if current_user =nil
-      = link_to 'Registrieren', new_user_registration_path, :class => 'btn-large btn'
-      = link_to 'Anmelden', new_user_session_path, :class => 'btn-large btn'
+
+  -if current_user
+    %h1 Willkommen #{current_user.username}
+    %br
+    %h4 
+      Wenn du deinen Mittag koordinieren möchtets,
+      %br dann ist dineOut genau das richtige für dich!
+      %br Probiere es einfach aus!
+    
+    %br
+  -else
+    %h1 Willkommen bei dineOut 
+    %br
+    %h4 
+      Wenn du deinen Mittag koordinieren möchtets,
+      %br dann ist dineOut genau das richtige für dich!
+      %br Probiere es einfach aus!
+    
+    %br
+    = link_to 'Registrieren', new_user_registration_path, :class => 'btn-large btn'
+    = link_to 'Anmelden', new_user_session_path, :class => 'btn-large btn'
 
 %br
 %br
