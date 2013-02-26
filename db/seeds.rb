@@ -4,9 +4,23 @@
 admin = User.create email: 'admin@dineout.com', username: 'Admin', password: 'passit', password_confirmation: 'passit'
 admin.add_role :admin
 
-User.create email: 'lena@dineout.com', username: 'Lena', password: 'passit', password_confirmation: 'passit'
-User.create email: 'gamze@dineout.com', username: 'Gamze', password: 'passit', password_confirmation: 'passit'
-User.create email: 'marlen@dineout.com', username: 'Marlen', password: 'passit', password_confirmation: 'passit'
+lena = User.create email: 'lena@dineout.com', username: 'Lena', password: 'passit', password_confirmation: 'passit'
+gamze = User.create email: 'gamze@dineout.com', username: 'Gamze', password: 'passit', password_confirmation: 'passit'
+marlen = User.create email: 'marlen@dineout.com', username: 'Marlen', password: 'passit', password_confirmation: 'passit'
+peter = User.create email: 'peter@dineout.com', username: 'Peter', password: 'passit', password_confirmation: 'passit'
+thomas = User.create email: 'thomas@dineout.com', username: 'Thomas', password: 'passit', password_confirmation: 'passit'
+felix = User.create email: 'felix@dineout.com', username: 'Felix', password: 'passit', password_confirmation: 'passit'
+verena = User.create email: 'verena@dineout.com', username: 'Verena', password: 'passit', password_confirmation: 'passit'
+julia = User.create email: 'julia@dineout.com', username: 'Julia', password: 'passit', password_confirmation: 'passit'
+lukas = User.create email: 'lukas@dineout.com', username: 'Lukas', password: 'passit', password_confirmation: 'passit'
+max = User.create email: 'max@dineout.com', username: 'Max', password: 'passit', password_confirmation: 'passit'
+simon = User.create email: 'simon@dineout.com', username: 'Simon', password: 'passit', password_confirmation: 'passit'
+laura = User.create email: 'laura@dineout.com', username: 'Laura', password: 'passit', password_confirmation: 'passit'
+linda = User.create email: 'linda@dineout.com', username: 'Linda', password: 'passit', password_confirmation: 'passit'
+michael = User.create email: 'michael@dineout.com', username: 'Michael', password: 'passit', password_confirmation: 'passit'
+stefan = User.create email: 'stefan@dineout.com', username: 'Stefan', password: 'passit', password_confirmation: 'passit'
+anne = User.create email: 'anne@dineout.com', username: 'Anne', password: 'passit', password_confirmation: 'passit'
+
 
 #cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #Mayor.create(:name => 'Emanuel', :city => cities.first)
@@ -232,6 +246,27 @@ Diner.create city: 'Münster',
 	zipcode: '48155',
 	:diner_type => dinertypes[4],
 	:mealtypes => [mealtypesar[0], mealtypesar[1]]
+
+Event.create :diner_id => 14, 
+  :dtime => DateTime.now,
+  :user_id => 1, 
+  :user_ids => [1, 3, 8]
+
+Event.create :diner_id => 9, 
+  :dtime => DateTime.now,
+  :user_id => 2, 
+  :user_ids => [2, 7]
+
+Event.create :diner_id => 16, 
+  :dtime => DateTime.now,
+  :user_id => 5, 
+  :user_ids => [5, 9, 10, 12, 13, 15]
+
+Event.create :diner_id => 17, 
+  :dtime => DateTime.now,
+  :user_id => 6, 
+  :user_ids => [6, 11, 14]
+
 
 #Diner.create city: 'Münster', 
 #	name: 'XXX', 
