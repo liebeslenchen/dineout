@@ -41,7 +41,7 @@ dineOut ist ein Tool zur Koordination von Mittagsaktivitäten
           sudo apt-get install bundle-essential
 
 ## Start
-### Übersicht
+### Anmeldung
 Um euch bei dineOut anzumelden haben wir die folgenden Benutzer angelegt (nur User, keine Adminfunktion):
 * Benutzername: Peter, Passwort: passit
 * Benutzername: Thomas, Passwort: passit
@@ -51,6 +51,31 @@ Außerdem gibt es noch einen Admin (mit den Rechten um alles zu bearbeiten und A
 
 #### Weitere Benutzer (Passwort ist immer "passit")
 * Lean, Gamze, Marlen, Felix, Verena, Julia,Lukas, Max, Simon, Laura, Linda, Michael, Stefan, Anne
+
+### Events
+Hier werden die Essensevents angezeigt. Hierbei ist zu berücksichtigen, 
+dass nur die aktuellen Events, die an dem heutigen Datum angelegt wurden, angezeigt werden.
+Um die Demodaten der Events zu aktualisieren könnt ihr entweder
+
+           rake db:reset        
+
+ausführen. Oder das folgende Sql-Statemant auf der Datenbank ausführen: 
+<br>(um einfachen Zugriff auf die Datenbank zu bekommen eignet sich das Firefox Add-On "SQLite Manager")
+
+           update events set dtime = datetime('now') where id in (1,2,3,4)
+
+Funktion:
+* Gäste können sich Events anschauen. 
+* Benutzer können Events anlegen (sie werden zum Ersteller und sind automatisch auch Teilnehmer)
+* andere Benutzer können an den Events teilnehmen
+* der Ersteller des Events kann es als einziger bearbeiten
+* das Event löschen, können der Ersteller und User mit Adminrechten
+
+### Administration
+Alle Benutzer die Admin Rechte haben, können unter Administration zu ActiveAdmin gelangen. Dort können Dinerarten 
+und Speisetypen verwaltet werden. 
+<br>Außerdem kann man die Benutzer verwalten, z.B. Adminrechte vergeben/entziehen.
+
 
 ## Heroku
 http://dineout.herokuapp.com/
