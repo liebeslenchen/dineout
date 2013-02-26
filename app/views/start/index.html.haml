@@ -9,8 +9,9 @@
   
   %br
   %p
-    = link_to 'Registrieren', new_user_registration_path, :class => 'btn-large btn'
-    = link_to 'Anmelden', new_user_session_path, :class => 'btn-large btn'
+    -if current_user =nil
+      = link_to 'Registrieren', new_user_registration_path, :class => 'btn-large btn'
+      = link_to 'Anmelden', new_user_session_path, :class => 'btn-large btn'
 
 %br
 %br
