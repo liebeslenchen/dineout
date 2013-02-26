@@ -13,6 +13,7 @@ class Ability
             cannot :delete, Event
             can :delete, Event, user_id: user.id             
             can :manage, Diner
+            cannot :delete, Diner
         end
     else
         #Guests
