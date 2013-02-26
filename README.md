@@ -76,7 +76,21 @@ Alle Benutzer die Admin Rechte haben, können unter Administration zu ActiveAdmi
 und Speisetypen verwaltet werden. 
 <br>Außerdem kann man die Benutzer verwalten, z.B. Adminrechte vergeben/entziehen.
 
-
 ## Heroku
 http://dineout.herokuapp.com/
 
+## Verwendete Gems
+* haml-rails
+* rspec-rails
+* factory_girl_rails
+* guard-rspec
+* faker
+* capybara
+* sqlite3
+* therubyracer
+* twitter-bootstrap-rails
+* less-rails
+* devise
+* rolify
+* activeadmin
+* cancan
