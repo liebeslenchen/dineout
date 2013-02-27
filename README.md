@@ -76,21 +76,32 @@ Alle Benutzer die Admin Rechte haben, können unter Administration zu ActiveAdmi
 und Speisetypen verwaltet werden. 
 <br>Außerdem kann man die Benutzer verwalten, z.B. Adminrechte vergeben/entziehen.
 
+### Weitere Funktionen
+Unter Diner findet sich alles rund um die Verwaltung von diners.
+<br>Um den Benutzeraccount anzupassen muss man auf den Benutzernamen klicken.
+ 
 ## Heroku
 http://dineout.herokuapp.com/
 
+## Rails
+Version: 3.2.9
+
 ## Verwendete Gems
-* haml-rails
-* rspec-rails
-* factory_girl_rails
-* guard-rspec
-* faker
-* capybara
-* sqlite3
-* therubyracer
-* twitter-bootstrap-rails
-* less-rails
-* devise
-* rolify
-* activeadmin
-* cancan
+* haml (3.1.7)
+* haml-rails (0.3.5)
+* rspec (2.12.0) 
+* rspec-rails (2.12.0)
+* factory_girl (4.1.0) 
+* factory_girl_rails (4.1.0)
+* guard-rspec (2.3.3) 
+* faker (1.1.2) 
+* capybara (2.0.1)
+* sqlite3 (1.3.6) 
+* therubyracer (0.11.0)
+* twitter-bootstrap-rails (2.1.9) 
+* less-rails (2.2.6) 
+* libv8 (3.11.8.4) 
+* devise (2.1.2)
+* rolify (3.2.0) 
+* activeadmin (0.5.1) 
+* cancan (1.6.8)
